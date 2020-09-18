@@ -1,0 +1,16 @@
+Problemstilling
+
+Opgaven består i at programmere 3 spil. Yatzee, hangman, og gæt-et-tal. Overordnet er vores problemstilling hvordan vi i samarbejde programmere disse spil ved hjælp af metoder vi har lært. Delområder af problemstillingen er:
+Hvordan vi ved hjælp af git samarbejder om programmering af vores produkt.
+Hvordan vi finder frem til den mest optimale løsning på vores opgave.
+
+
+
+Gruppekontrakt
+
+Mødetider - kl 9. til ?
+Mødetidspunkt kan ændres i forhold til hvor langt vi er med opgaven.
+Stop tidspunkt aftales på forhånd som det første hver dag i forhold til disponering af opgaven og medlemmernes hjemmeliv.
+Fjernarbejde skal aftales senest aftenen før.
+
+Åben kommunikation er nøgle egenskaben for gruppe arbejdet.
