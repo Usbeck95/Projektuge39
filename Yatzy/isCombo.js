@@ -1,5 +1,5 @@
 /*
-//Kontrollerer, om alle elementer i matrixen er ens
+//Kontrollerer, om alle elementer er ens
 function erEns(array) {
     if (array.every((val, i ,arr)=> val ==
     arr[0])){
@@ -31,7 +31,7 @@ function largeNumber() {
     return score;
 };
 
-//Beregner scote for et små tal
+//Beregner score for et små tal
 function smallNumber() {
     let score = 0;
     let length = howMany(roll);
@@ -41,34 +41,37 @@ function smallNumber() {
     return score;
 }
 */
-// Beregner scoren for et fullhouse
-function isCombo(komb) {
-
-    if(komb.length != 5) return null;
-
-    var map = [0, 0, 0, 0, 0, 0];
-    for(var i = 0; i < komb.length; i++) {
-        var digit = komb.charCodeAt(i) - 48;
-        if(digit < 1 || digit > 6) return null;
-        map[digit - 1]++;
+// Beregner fullhouse
+const isCombo = (ar1) => {
+    let countObj = {}
+    for(let x of ar1){
+      countObj[x] = (countObj[x] || 0) + 1;
     }
-
-    var sum = 0, p = 0, seq = 0;
-    for(var i = 0; i < map.length; i++) {
-        if(map[i] == 2) sum += 20;
-        if(map[i] >= 3) sum += map[i];
-
-        p = map[i] ? p + 1 : 0;
-        if(p > seq) seq = p;
+    let vals = Object.values(countObj);
+    if((vals[0] === 2 && vals[1] === 3) || (vals[1] === 2 && vals[0] === 3)){
+      return true;
     }
-
-    if(sum == 5)  return "Yahtzee";
-    if(sum == 23) return "Full House";
-    if(sum == 3)  return "Three-Of-A-Kind";
-    if(sum == 4)  return "Four-Of-A-Kind";
-
-    if(seq == 5) return "Large Straight";
-    if(seq == 4) return "Small Straight";
-
-    return "Chance";
-}
+    return false;
+  }
+  
+  //Kontrollere to ens par
+  const twoPairs = ar1 => {
+    let countObj = {}
+    for(let x of ar1){
+      countObj[x] = (countObj[x] || 0) + 1;
+    }
+    let vals = Object.values(countObj);
+    //console.log(vals);
+    if(vals.filter(x => x === 2).length == 2) return true;
+    return false;
+  }
+  
+  
+  //Tester-----------
+  let arrays = [[1, 2, 3, 4, 5, 6], [2, 4, 2, 4, 2], [2, 2, 4, 4, 6]]
+  arrays.forEach(x => {
+    console.log(`Array: ${JSON.stringify(x)}`)
+    console.log(`Full House: ${fullHouse(x)}`)
+    console.log(`Two Pairs: ${twoPairs(x)}`)
+  })
+};
