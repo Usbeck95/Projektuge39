@@ -1,4 +1,4 @@
-
+/*
 //Kontrollerer, om alle elementer i matrixen er ens
 function erEns(array) {
     if (array.every((val, i ,arr)=> val ==
@@ -40,30 +40,35 @@ function smallNumber() {
     }
     return score;
 }
+*/
+// Beregner scoren for et fullhouse
+function isCombo(komb) {
 
-// Beregner scoren for et fuldt hus
-function isCombo() {
-      let score = 0;  
-      let isCombo = roll;
-      let frequency = {};
-      let max = 0;
-      let most;
-      for(var v in isCombo) {
-        frequency[isCombo[v]]=
-          (frequency[isCombo[v]] || 0) + 1;
-          if (frequency[isCombo[v]] > max) {
-              max = frequency[isCombo[v]];
-              most = isCombo[v];
-          }
-          if(max === 3) {
-              isCombo = $.grep(isCombo, 
-            function(value) {
-                return value != most;
-            });
-            if (erEns(isCombo) && isCombo.length === 2){
-                score = 25;
-            }
-          }
-      }
-      return score;
+    if(komb.length != 5) return null;
+
+    var map = [0, 0, 0, 0, 0, 0];
+    for(var i = 0; i < komb.length; i++) {
+        var digit = komb.charCodeAt(i) - 48;
+        if(digit < 1 || digit > 6) return null;
+        map[digit - 1]++;
+    }
+
+    var sum = 0, p = 0, seq = 0;
+    for(var i = 0; i < map.length; i++) {
+        if(map[i] == 2) sum += 20;
+        if(map[i] >= 3) sum += map[i];
+
+        p = map[i] ? p + 1 : 0;
+        if(p > seq) seq = p;
+    }
+
+    if(sum == 5)  return "Yahtzee";
+    if(sum == 23) return "Full House";
+    if(sum == 3)  return "Three-Of-A-Kind";
+    if(sum == 4)  return "Four-Of-A-Kind";
+
+    if(seq == 5) return "Large Straight";
+    if(seq == 4) return "Small Straight";
+
+    return "Chance";
 }
