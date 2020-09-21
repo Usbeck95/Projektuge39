@@ -21,6 +21,26 @@ function howMany(array) {
     return length;
 };
 
+//Beregner score for et stort tal
+function largeNumber() {
+    let score = 0;
+    let length = howManyØ(roll);
+    if (length === 4){
+        score = 40;
+    }
+    return score;
+};
+
+//Beregner scote for et små tal
+function smallNumber() {
+    let score = 0;
+    let length = howMany(roll);
+    if (lenth >= 3) {
+        score = 30;
+    }
+    return score;
+}
+
 // Beregner scoren for et fuldt hus
 function isCombo() {
       let score = 0;  
@@ -40,7 +60,10 @@ function isCombo() {
             function(value) {
                 return value != most;
             });
-            if []
+            if (erEns(isCombo) && isCombo.length === 2){
+                score = 25;
+            }
           }
       }
+      return score;
 }
