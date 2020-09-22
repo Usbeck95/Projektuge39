@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Yatzy kode test</title>
-<script src="testyatzy.js"></script>
+<script src="lib/yatzylib.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,50 +16,38 @@
         <p id="rollsLeft"> Rolls left: </p>
         <button id="restartBtn"> Restart </button>
     </div>
+
         <div id="diceOne" class="dice"></div>
         <div id="diceTwo" class="dice"></div>
         <div id="diceThree" class="dice"></div>
         <div id="diceFour" class="dice"></div>
         <div id="diceFive" class="dice"></div>
-        <div id="diceSix" class="dice"></div>
+        <br><br><br>
+
+
     <div id="upperSection">
         <h2> Upper Section</h2>
-        <ul>
-            <li> Ones:<button> Stay</button></li>
-            <li> Twos:<button> Stay</button></li>
-            <li> Threes:<button> Stay</button></li>
-            <li> Fours:<button> Stay</button></li>
-            <li> Fives:<button> Stay</button></li>
-            <li> Sixes:<button> Stay</button></li>
-            <li> Bonus:<button> Stay</button></li>
-        </ul>
+
         <p id="sumOfUpScore"> Sum of Upper scores:</p>
     </div>
 
     <div id="lowerSection">
         <h2> Lower Section</h2>
-        <ul>
-            <li> One pair:<button> Stay</button></li>
-            <li> Two pairs:<button> Stay</button></li>
-            <li> Three of a kind:<button> Stay</button></li>
-            <li> Four of a kind:<button> Stay</button></li>
-            <li> Small straight:<button> Stay</button></li>
-            <li> Large straight:<button> Stay</button></li>
-            <li> Full house:<button> Stay</button></li>
-            <li> Chance:<button> Stay</button></li>
-            <li> Yatzy:<button> Stay</button></li>
-        </ul>
+
         <p id="sumOfLowScore"> Sum of Lower scores:</p>
     </div>
     <h3 id="SumOfAllScore"> Sum of final score:</h3>
 
     <div class="responsive">
+        <!--
             <img src="img/diceone.png" width="100" height="100" alt="" id="diceOne" class="diceEn">
             <img src="img/dicetwo.png" alt="" id="diceTwo" width="100" height="100">
             <img src="img/dicethree.png" alt="" id="diceThree" width="100" height="100">
             <img src="img/dicefour.png" alt="" id="diceFour" width="100" height="100">
             <img src="img/dicefive.png" alt="" id="diceFive" width="100" height="100">
+        -->
     </div>
 
 </body>
+<script src="executable.js"></script>
 </html>
