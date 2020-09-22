@@ -1,2 +1,2 @@
-createCookie("name", value, 100);
+createCookie("name", counter, 100);
 

@@ -7,6 +7,7 @@ var guessed = false
 do {
     if (counter > maxTries) {
       alert("You have no more tries left.");
+      break;
       
   } else {
       guess = prompt("Can you guess a number between 1 and 100 in less than 10 attempts?");
