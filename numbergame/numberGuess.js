@@ -6,7 +6,7 @@ var guessed = false
 
 do {
     if (counter > maxTries) {
-      alert("You have no more tries left. Refresh the page to try again.");
+      alert("You have no more tries left.");
       
   } else {
       guess = prompt("Can you guess a number between 1 and 100 in less than 10 attempts?");
@@ -18,12 +18,12 @@ do {
         alert("That number is too low. Try again!");
         guessed = false
       } else {
-        alert("Congratulations, you guessed the right number!" + " It took you " + counter + " attempts to guess the correct number.")
+        alert("Congratulations, you guessed the right number!" + " It took you " + counter + " attempts.")
         guessed = true
       } 
   }
 }
-while (guessed === false) //Laver et while-loop og gentager alt under do {, så længe tallet ikke er blevet gættet.
+while (guessed === false) //Laver et while-loop og gentager alt under do {, så længe tallet ikke er blevet gættet eller forsøgene opbrugt.
     
 //Inspiration fra https://stackoverflow.com/questions/37795345/guessing-game-1-to-100-using-do-while-loop-and-if-ese-if-conditional-statement
 //Inspiration fra https://www.codegrepper.com/code-examples/javascript/how+to+make+a+random+number+guessing+game+in+javascript
