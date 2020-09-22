@@ -1,32 +1,59 @@
 'use strict'
 
+let tries = 0;
+let rounds = 0;
+
+const chooseScore = function() {
+let writetoscore = $('writeToScore');
+erEns();
+}
+
+
 const gameloop = function() {
 /* Funktionerne bliver kaldt vha EventListeners*/
-realrollDice();
+if (rounds < 15) {
+	if (tries < 100) {
+		realrollDice();
 
-let dice1 =$('diceOne');
-let dice2 =$('diceTwo');
-let dice3 =$('diceThree');
-let dice4 =$('diceFour');
-let dice5 =$('diceFive');
+		let dice1 =$('diceOne');
+		let dice2 =$('diceTwo');
+		let dice3 =$('diceThree');
+		let dice4 =$('diceFour');
+		let dice5 =$('diceFive');
 
-dice1.addEventListener('click', dice1stay);
-dice2.addEventListener('click', dice2stay);
-dice3.addEventListener('click', dice3stay);
-dice4.addEventListener('click', dice4stay);
-dice5.addEventListener('click', dice5stay);
+		/* Funktionerne bliver kaldt vha EventListeners*/
+		dice1.addEventListener('click', dice1stay);
+		dice2.addEventListener('click', dice2stay);
+		dice3.addEventListener('click', dice3stay);
+		dice4.addEventListener('click', dice4stay);
+		dice5.addEventListener('click', dice5stay);
+		/**
+		let dice = document.getElementsByClassName("dice");
+		dice.innerHTML = '<span style=""></span>';
+		**/
+		/*skriver kastene ud fra arr1 til den pågældende terning*/
+		dice1.innerHTML = (arr1[0]);
+		dice2.innerHTML = (arr1[1]);
+		dice3.innerHTML = (arr1[2]);
+		dice4.innerHTML = (arr1[3]);
+		dice5.innerHTML = (arr1[4]);
+		tries +=1;
+		let rollsleft =$('rollsLeft');
+		rollsleft.innerHTML = (tries);
 
-dice1.innerHTML = (arr1[0]);
-dice2.innerHTML = (arr1[1]);
-
-dice3.innerHTML = (arr1[2]);
-
-dice4.innerHTML = (arr1[3]);
-
-dice5.innerHTML = (arr1[4]);
-
-
+		}
+	else {
+		writetoscore.addEventListener('click', chooseScore);
+		}
+/*rounds +=1; skal bruges i chooseScore() og tries skal sættes til nul igen*/
 }
+else {
+	console.log('gameover')
+}
+}
+
+
+
 
 
 $('rollBtn').addEventListener('click', gameloop);
