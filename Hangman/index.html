@@ -8,45 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>Hangman</h1>
-   <p>Enter a letter</p>
-   <div class="game-container">
-       <svg height="250" width="200" class="figure-container">
-       <!--Stang-->
-           <line x1="60" y1="20" x2="140" y2="20"/>
-           <line x1="140" y1="20" x2="140" y2="50"/>
-           <line x1="60" y1="20" x2="60" y2="230"/>
-           <line x1="20" y1="230" x2="100" y2="230"/>
-        <!--Hoved-->
-            <circle cx="140" cy="70" r="20" class="figure-part"/>
-        <!--Krop-->
-            <line x1="140" y1="90" x2="140" y2="150" class="figure-part"/>
-        <!--Hænder-->
-            <line x1="140" y1="120" x2="120" y2="100" class="figure-part"/>
-            <line x1="140" y1="120" x2="160" y2="100" class="figure-part"/>
-       <!--Fødder-->
-            <line x1="140" y1="150" x2="120" y2="180" class="figure-part"/>
-            <line x1="140" y1="150" x2="160" y2="180" class="figure-part"/>
-       </svg>
-       <div class="wrong-lettters-container">
-           <div id="wrong-letters"></div>
-       </div>
 
-       <div class="word" id="word">
-       </div>
-   </div>
+    <h1>Hangman</h1>
 
-   <!--Sidste besked-->
-   <div class="popup-container" id="popup-container">
-       <div class="popup">
-           <h2 id="final-message"></h2><!--You have won-->
-           <button id="play-button">Try again</button>
-       </div>
-   </div>
+    <div id="mydiv"><h2 id="guessedWord">_ _ _ _ _</h2></div>
 
-   <!---->
-   <div class="notification-container" id="notification-container">
-       <p>You have already entered this letter</p>
-   </div>
+    <input class="str" type="text" placeholder="Enter a character to guess" id="str" />
+
+    <button onclick="clicked();">Guess</button>
+
+    <h3 id="message">Keep Playing</h3>
   </body>
 </html>
