@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>JS.10.1</title>
+        <script defer src="c"></script>
+    </head>
+    <body>
+        <h1> Guess a number between 1 and 100</h1>
+        <form id='guessForm'></form>
+             <label for="guess">Enter a number: </label>
+            <br>
+            <input type="text" id="guessNumb" name="guess" placeholder="" required/>
+            <br>
+            <input type = "submit" value = "Submit guess" 
+            class = "button" id="submitbutton"> 
+            <br>
+        </form>
+        <br>
+        <form action ='http://x15.dk/hitme.php' method='post' id='formal'>
+           
+            <label for="name">Enter your name: </label>
+            <br>
+            <input type="text" id="name" name="username" minlength="1" placeholder="John" required/>
+            <br>
+            <p id='buttons'>
+                <input type='submit' id='b1' value='Go'/>
+                <input type='reset' value='Reset'/>
+            </p>
+                               
+        </form>
+    </body>
+</html>
