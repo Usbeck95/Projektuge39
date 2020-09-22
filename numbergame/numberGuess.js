@@ -18,9 +18,12 @@ do {
         alert("That number is too low. Try again!");
         guessed = false
       } else {
-        alert("Congratulations, you guessed the right number!")
+        alert("Congratulations, you guessed the right number!" + " It took you " + counter + " attempts to guess the correct number.")
         guessed = true
       } 
   }
 }
 while (guessed === false) //Laver et while-loop og gentager alt under do {, så længe tallet ikke er blevet gættet.
+    
+//Inspiration fra https://stackoverflow.com/questions/37795345/guessing-game-1-to-100-using-do-while-loop-and-if-ese-if-conditional-statement
+//Inspiration fra https://www.codegrepper.com/code-examples/javascript/how+to+make+a+random+number+guessing+game+in+javascript
