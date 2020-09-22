@@ -10,7 +10,7 @@ username = prompt("Enter your name");
 do {
     if (counter > maxTries) {
       alert("You have no more tries left.");
-      break;
+      break; //Stopper scriptet, hvis alle forsøg er opbrugt.
       
   } else {
       guess = prompt("Can you guess a number between 1 and 1000 in less than 10 attempts?");
