@@ -1,0 +1,123 @@
+body {
+    background-color: #1dffff;
+    color: black;
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 20px 0 0;
+}
+
+.game-container {
+    padding: 20px 30px;
+    position: relative;
+    margin: auto;
+    width: 450px;
+}
+
+.fig-cont {
+    fill: transparent;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 4px;
+    stroke-linecap: round; /* -----<line x1="60" y1="20" x2="140" y2="20"/>*/
+}
+
+.fig-pa {
+    display: none;
+}
+
+.wrong-letters-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.wrong-letters-container p {
+    margin: 24px;
+}
+
+.wrong-letters-container span {
+    font-size: 24px;
+}
+
+.word {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.letter {
+    border-bottom: 3px solid #4438f7;
+    display: inline-flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    height: 50px;
+    width: 20px;
+}
+
+.popup-container {
+    background-color: rgb(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*display: flex;/*gemmer*/
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background: chartreuse;
+    border-radius: 10px;
+    box-shadow: 0 15px 10px 3px rgba(red, green, blue, alpha);
+    padding: 20px;
+    text-align: center;
+}
+
+.popup button {
+    cursor: pointer;
+    background: chartreuse;
+    color: rgb(8, 8, 8);
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 20px;
+}
+
+.popup button:active {
+    transform: scale(0.98);
+}
+
+.popup button:focus {
+    outline: 0;
+}
+
+.notification-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 0 0;
+    padding: absolute;
+    bottom: -50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.notification-container p {
+    margin: 0;
+}
+
+.notification-container.show {
+    transform: translate(-50px);
+}
