@@ -3,9 +3,9 @@ var guess //Indtastet gæt via prompt fra en bruger.
 var counter = 0
 var maxTries = 9
 var guessed = false
-var name
+var username
 
-name = prompt("Enter your name");
+username = prompt("Enter your name");
 
 do {
     if (counter > maxTries) {
@@ -28,6 +28,8 @@ do {
   }
 }
 while (guessed === false) //Laver et while-loop og gentager alt under do {, så længe tallet ikke er blevet gættet eller forsøgene opbrugt.
+
+createCookie(username, counter, 100);
     
 //Inspiration fra https://stackoverflow.com/questions/37795345/guessing-game-1-to-100-using-do-while-loop-and-if-ese-if-conditional-statement
 //Inspiration fra https://www.codegrepper.com/code-examples/javascript/how+to+make+a+random+number+guessing+game+in+javascript
