@@ -3,6 +3,9 @@ var guess //Indtastet gæt via prompt fra en bruger.
 var counter = 0
 var maxTries = 9
 var guessed = false
+var name
+
+name = prompt("Enter your name");
 
 do {
     if (counter > maxTries) {
