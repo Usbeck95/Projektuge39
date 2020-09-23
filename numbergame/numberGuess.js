@@ -1,7 +1,7 @@
 var number = Math.floor(Math.random() * 1000 + 1) //Laver et tilfældigt tal mellem 1 og 1000.
 var guess //Indtastet gæt via prompt fra en bruger.
 var counter = 0
-var maxTries = 10
+var maxTries = 9
 var guessed = false
 var username
 
