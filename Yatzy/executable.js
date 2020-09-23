@@ -7,7 +7,7 @@ const gameloop = function() {
 /* Funktionerne bliver kaldt vha EventListeners*/
 if (rounds < 15) {
 
-	if (tries < 20) {
+	if (tries < 5) {
 		realrollDice();
 
 		let dice1 =$('diceOne');
