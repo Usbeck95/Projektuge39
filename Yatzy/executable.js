@@ -49,8 +49,14 @@ else {
 }
 
 
+const restartGame = function () {
+
+    location.reload();
+}
 
 
+
+$('restartBtn').addEventListener('click', restartGame);
 
 $('rollBtn').addEventListener('click', gameloop);
 
