@@ -9,7 +9,10 @@
   width: 40px;
   height: 40px;
   border: solid 4px #000000;
-float:left;
+float:right;
+      position:relative;
+      left: -50%;
+      text-align:center;
   margin-right: 40px;
   margin-top: 20px;
   }
