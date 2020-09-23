@@ -2,21 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
-    <script src="hangman.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <h1>Hangman</h1>
+    <p style="text-align:center";>Spillet går ud på at gætte et ord eller en sætning, 
+        hvor kun antallet af bogstaver er kendt, lidt i stil med Lykkehjulet.
+         Der gættes på skift et bogstav ad gangen, og korrekte bogstaver bliver 
+         placeret på de respektive pladser i ordet eller sætningen.</p>
+   <div>
+        <svg height="250" width="200" class="figure-container">
+            <!--Stang-->
+            <line x1="60" y1="20" x2="140" y2="20"/>
+            <line x1="140" y1="20" x2="140" y2="50"/>
+            <line x1="60" y1="20" x2="60" y2="230"/>
+            <line x1="20" y1="230" x2="100" y2="230"/>
+            <!--Hoved-->
+            <circle cx="140" cy="70" r="20"/>
+            <!--Krop-->
+            <line x1="140" y1="90" x2="140" y2="150"/>
+            <!--Ærmer-->
+            <line x1="140" y1="120" x2="120" y2="100"/>
+            <line x1="140" y1="120" x2="160" y2="100"/>
+            <!--Fødder-->
+            <line x1="140" y1="150" x2="120" y2="180"/>
+            <line x1="140" y1="150" x2="160" y2="180"/>
+        </svg>
+    </div>
+<script>
+var words = [
+    'html',
+    'css',
+    'javascript',
+]; //de orde, der skal gættes
+var word = words[Math.floor(Math.random() * words.length) ]; //tilfældigt
 
-    <div id="mydiv"><h2 id="guessedWord">_ _ _ _ _</h2></div>
+var answerArray = []; //brugersvar
 
-    <input class="str" type="text" placeholder="Enter a character to guess" id="str" />
+var lifes = 6; //forsøg
 
-    <button onclick="clicked();">Guess</button>
+//tjekker om bogstavet er rigtig
+for (var i = 0; i < word.length; i++){
+    answerArray[i] = '_'
+}
+var remaingLetters = word.length;
 
-    <h3 id="message">Keep Playing</h3>
-  </body>
+while (remaingLetters > 0 && lifes > 0 ){
+    alert(answerArray.join(' '));
+
+
+ var guess = prompt('Guess the letter! Click "Cancel" to exit. You '+ lifes + ' attempts').toLowerCase();
+//indtast kun små bogstaver 
+//spil loop
+if (guess === null) {
+    break;
+} else if (guess.length !== 1) {
+    alert('Et bogstav pr gang');
+} else {
+    for (var j = 0; j < word.length; j++){
+        if (word[j] === guess){
+            answerArray[j] = guess;
+            remaingLetters--;
+            }
+        }lifes--
+    }
+}
+//display the result after the end of the game cycle
+alert(answerArray.join(' '));
+if(lifes > 0){
+    alert('Congratulations! This word - ' + word);
+} else {
+    alert('You lost! This word ' + word);
+}
+</script>
+</body>
 </html>
