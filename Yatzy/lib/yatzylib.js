@@ -77,10 +77,11 @@ const dice5stay = function() {
 }
 
 
+
 //Kontrollerer, om alle elementer er ens
 function erEns(arr1) {
     if (arr1.every((val, i ,arr)=> val ==
-    arr1[i])){
+    arr1[0])){
         return true;
     } else {
         return false;
@@ -91,7 +92,7 @@ function erEns(arr1) {
 function howMany(array) {
     let sorted = array.sort();
     let length = 0;
-    for (var i = o; i < sorted.length - 1; i++) {
+    for (var i = 0; i < sorted.length - 1; i++) {
         if(sorted[i + 1] - sorted[i] === 1){
             length += 1;
         }
@@ -120,9 +121,9 @@ function smallNumber() {
 }
 /*
 // Beregner fullhouse */
-const isCombo = (ar1) => {
+const isCombo = (arr1) => {
     let countObj = {}
-    for(let x of ar1){
+    for(let x of arr1){
       countObj[x] = (countObj[x] || 0) + 1;
     }
     let vals = Object.values(countObj);
@@ -133,9 +134,9 @@ const isCombo = (ar1) => {
   }
   
   //Kontrollere to ens par
-  const twoPairs = ar1 => {
+  const twoPairs = arr1 => {
     let countObj = {}
-    for(let x of ar1){
+    for(let x of arr1){
       countObj[x] = (countObj[x] || 0) + 1;
     }
     let vals = Object.values(countObj);
@@ -147,12 +148,11 @@ const isCombo = (ar1) => {
 
 const endRound = function() {
 let scoreboard = $('scoreBoard');
-scoreboard.innerHTML = (arr1[0]+arr1[1]+arr1[2]+arr1[3]+arr1[4]);
-/*erEns();*/
 rounds+=1;
 tries=0;
 arr2 = [false, false, false, false, false];
-dice.style.border = 'thick solid #000000'; 
+dice1.style.border = 'thick solid #000000'; 
+
 }
 
 
