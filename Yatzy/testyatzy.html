@@ -10,34 +10,44 @@
 <body>
 
     <h1> Yatzy time!! </h1>
-
+<div class="row" style="text-align:center"> <!-- Centrerer alt content inden for denne div -->
+    <div class="col-md-3" style="height:150px">
     <div id="btnBox">
-        <button id="rollBtn"> Roll dice </button>
+        <button id="rollBtn" class="btBox"> Roll dice </button>
         <p>Rolls used: </p> <div id="rollsLeft"></div>
-        <button id="writeToScore"> Write to scoreboard </button>
-        <button id="restartBtn"> Restart </button>
-
+        <button id="restartBtn" class="btBox"> Restart </button>
+    </div>
     </div>
 
-        <div id="diceOne" class="dice"></div>
-        <div id="diceTwo" class="dice"></div>
-        <div id="diceThree" class="dice"></div>
-        <div id="diceFour" class="dice"></div>
-        <div id="diceFive" class="dice"></div>
-        <br><br><br>
-
+        <div id="diceOne" class="Dice"></div>
+        <div id="diceTwo" class="Dice"></div>
+        <div id="diceThree" class="Dice"></div>
+        <div id="diceFour" class="Dice"></div>
+        <div id="diceFive" class="Dice"></div>
+        <br><br><br><br><br>
 
     <div id="upperSection">
         <h2> Upper Section</h2>
 
         <p id="sumOfUpScore"> Sum of Upper scores:</p>
-        <div id="scoreboard"></div>
+        <div id="scoreBoard">
+            <p>Ones:</p><div id="ones" class="scores"></div><button id="scoreOnes" class="scoreBtn">Score Ones</button><br>
+            <p>Twos:</p><div id="twos" class="scores"></div><button id="scoreTwos" class="scoreBtn">Score Twos</button><br>
+            <p>Threes:</p><div id="threes" class="scores"></div><button id="scoreThrees" class="scoreBtn">Score Threes</button><br>
+            <p>Fours:</p><div id="fours" class="scores"></div><button id="scoreFours" class="scoreBtn">Score Fours</button><br>
+            <p>Fives:</p><div id="five" class="scores"></div><button id="scoreFives" class="scoreBtn">Score Fives</button><br>
+            <p>Sixes</p><div id="five" class="scores"></div><button id="scoreSixes" class="scoreBtn">Score Sixes</button><br>
+
+            <p>Bonus:</p><div id="bonus" class="scores"></div><br>
+
+        </div>
     </div>
 
     <div id="lowerSection">
         <h2> Lower Section</h2>
 
         <p id="sumOfLowScore"> Sum of Lower scores:</p>
+
     </div>
     <h3 id="SumOfAllScore"> Sum of final score:</h3>
 
@@ -50,6 +60,8 @@
             <img src="img/dicefive.png" alt="" id="diceFive" width="100" height="100">
         -->
     </div>
+</div>
+
 
 </body>
 <script src="executable.js"></script>

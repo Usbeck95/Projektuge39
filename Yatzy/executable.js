@@ -1,18 +1,13 @@
 'use strict'
 
-let tries = 0;
-let rounds = 0;
 
-const chooseScore = function() {
-let writetoscore = $('writeToScore');
-erEns();
-}
 
 
 const gameloop = function() {
 /* Funktionerne bliver kaldt vha EventListeners*/
 if (rounds < 15) {
-	if (tries < 100) {
+
+	if (tries < 5) {
 		realrollDice();
 
 		let dice1 =$('diceOne');
@@ -43,9 +38,10 @@ if (rounds < 15) {
 
 		}
 	else {
-		writetoscore.addEventListener('click', chooseScore);
+		let writetoscore = $('writeToScore');
+		writetoscore.addEventListener('click', endRound);
 		}
-/*rounds +=1; skal bruges i chooseScore() og tries skal sættes til nul igen*/
+
 }
 else {
 	console.log('gameover')
@@ -53,8 +49,14 @@ else {
 }
 
 
+const restartGame = function () {
+
+    location.reload();
+}
 
 
+
+$('restartBtn').addEventListener('click', restartGame);
 
 $('rollBtn').addEventListener('click', gameloop);
 

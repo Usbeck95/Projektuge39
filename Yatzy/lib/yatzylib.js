@@ -8,6 +8,10 @@ const $ = function(foo) {
 let arr2 = [false, false, false, false, false];
 let arr1 = [];
 let res;
+let tries = 0;
+let rounds = 0;
+let dice = document.getElementsByClassName("Dice");
+
 
 function roll() {
   return Math.floor(Math.random() * 6 + 1); 
@@ -37,45 +41,72 @@ const rollDice = function () {
 
 
 const dice1stay = function() {
-    let dice1 = $('diceOne'); 
-    dice1.style.border = 'thick dotted #000000'; 
+    let dice1 = $('diceOne');
 
-    arr2[0] = true; /*Sætter elementerne per index i arr2 til true hvilket
+    if (arr2[0] === false) {
+    this.style.border = 'dotted #000000'; 
+    arr2[0] = true; }
+    else if(arr2[0] === true){
+    this.style.border = 'solid #000000'; 
+    arr2[0] = false;
+    }
+
+
+
+    /*Sætter elementerne per index i arr2 til true hvilket
                     tager dem ud af loopet i realrolldice()*/
 }
 
 const dice2stay = function() {
     let dice2 = $('diceTwo');
-    dice2.style.border = 'thick dotted #000000';
 
-    arr2[1] = true;
+    if (arr2[1] === false) {
+    this.style.border = 'dotted #000000'; 
+    arr2[1] = true; }
+    else if(arr2[1] === true){
+    this.style.border = 'solid #000000'; 
+    arr2[1] = false;
+    }
 }
 
 const dice3stay = function() {
     let dice3 = $('diceThree');
-    dice3.style.border = 'thick dotted #000000';
-
-    arr2[2] = true;
+    if (arr2[2] === false) {
+    this.style.border = 'dotted #000000'; 
+    arr2[2] = true; }
+    else if(arr2[2] === true){
+    this.style.border = 'solid #000000'; 
+    arr2[2] = false;
+    }
 }
 
 const dice4stay = function() {
     let dice4 = $('diceFour');
-    dice4.style.border = 'thick dotted #000000';
-
-    arr2[3] = true;
+    if (arr2[3] === false) {
+    this.style.border = 'dotted #000000'; 
+    arr2[3] = true; }
+    else if(arr2[3] === true){
+    this.style.border = ' solid #000000'; 
+    arr2[3] = false;
+    }
 }
 
 const dice5stay = function() {
     let dice5 = $('diceFive');
-    dice5.style.border = 'thick dotted #000000';
-
-    arr2[4] = true;
+    if (arr2[4] === false) {
+    this.style.border = ' dotted #000000'; 
+    arr2[4] = true; }
+    else if(arr2[4] === true){
+    this.style.border = ' solid #000000'; 
+    arr2[4] = false;
+    }
 }
+
 
 
 //Kontrollerer, om alle elementer er ens
 function erEns(arr1) {
-    if (array.every((val, i ,arr)=> val ==
+    if (arr1.every((val, i ,arr)=> val ==
     arr1[0])){
         return true;
     } else {
@@ -87,7 +118,7 @@ function erEns(arr1) {
 function howMany(array) {
     let sorted = array.sort();
     let length = 0;
-    for (var i = o; i < sorted.length - 1; i++) {
+    for (var i = 0; i < sorted.length - 1; i++) {
         if(sorted[i + 1] - sorted[i] === 1){
             length += 1;
         }
@@ -114,11 +145,11 @@ function smallNumber() {
     }
     return score;
 }
-*/
-// Beregner fullhouse
-const isCombo = (ar1) => {
+/*
+// Beregner fullhouse */
+const isCombo = (arr1) => {
     let countObj = {}
-    for(let x of ar1){
+    for(let x of arr1){
       countObj[x] = (countObj[x] || 0) + 1;
     }
     let vals = Object.values(countObj);
@@ -129,9 +160,9 @@ const isCombo = (ar1) => {
   }
   
   //Kontrollere to ens par
-  const twoPairs = ar1 => {
+  const twoPairs = arr1 => {
     let countObj = {}
-    for(let x of ar1){
+    for(let x of arr1){
       countObj[x] = (countObj[x] || 0) + 1;
     }
     let vals = Object.values(countObj);
@@ -139,6 +170,22 @@ const isCombo = (ar1) => {
     if(vals.filter(x => x === 2).length == 2) return true;
     return false;
   }
+
+  const gotBonus = function(){
+    ones
+
+
+  }
+
+
+const endRound = function() {
+let scoreboard = $('scoreBoard');
+rounds+=1;
+tries=0;
+arr2 = [false, false, false, false, false];
+dice1.style.border = 'thick solid #000000'; 
+
+}
 
 
 
