@@ -1,109 +1,61 @@
 "use strict";
+// ordte der skal gettes
+var word = ["a", "e", "r", "o", "p", "l", "a", "n", "e"];
 
-const wordEl = document.getElementById('word');
-const wrongLettersEl = document.getElementById('wrong-letters');
-const playAgainBtn = document.getElementById('play-button');
-const popup = document.getElementById('popup-container');
-const notification = document.getElementById('notification-container');
-const finalMessage = document.getElementById('final-message');
+var guess = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
 
-const figureParts = document.querySelectorAll('.figure-part');
+const guessLetter = str => {
 
-const words = ['application', 'programmering', 'interface', 'wizard'];
+  let flag = 0;
 
-let selectedWord = words[Math.floor(Math.random() * words.length)];
+  // traversing the whole word array to check if guessed char is equal to it or not
 
-const correctLetters = [];
-const wrongLetters = [];
+  for (var i = 0; i < word.length; i++) {
 
- // viser skjult ord
- 
-function displayWord() {
-    wordEl.innerHTML = 
-        ${selectedWord.split('').map(
-                letter =>
-                <span class="letter">
-                    ${correctLetters.includes(letter) ? letter : ''}
-                </span>
-            )
-            .join('')}
-            ;
-    const innerWord = wordEl.innerText.replace(/\n/g, '');
-    
-    if(innerWord === selectedWord){
-        finalMessage.innerText = 'Tillykke! You won!!!';
-        popup.style.display = 'flex';
+    if (word[i] === str) {
+
+      flag = 1;
+
+      guess[i] = str;
+
     }
+
+  }
+
+  console.log(guess.join(" "));
+
+  // if the guess letter was correct
+
+  if (flag == 1) {
+
+    document.getElementById("guessedWord").innerHTML = guess.join(" ");
+
+    document.getElementById("str").value = "";
+
+    document.getElementById("message").innerHTML =
+
+      "Congratulation you guessed the right letter";
+
+    // console.log("Congratulation you guessed the right letter");
+
+  }
+
+  // if all the letters are guessed
+
+  if (!guess.includes("_")) {
+
+    document.getElementById("message").innerHTML =
+
+      "Congratulation you won the game";
+
+    // console.log("Congratulation you won the game");
+  }
 };
 
-//Forkerte bogstav
-function updateWrongLettersEl() {
-    wrongLettersEl.innerHTML = 
-    ${wrongLetters.length > 0 ? '<p>Forkert</p>' : ''};
-    ${wrongLetters.map(letter => `<span>${letter}</span>`)};
+const clicked = () => {
 
-    figureParts.forEach((part, index) => {
-        const errors = wrongLetters.length;
+  const str = document.getElementById("str").value;
 
-        if (index < errors){
-            part.style.display = 'block';
-        } else {
-            part.style.display = 'none';
-        }
-    });
-    //tjek om tabt
-    if(wrongLetters.length === figureParts.length){
-        finalMessage.innerText = 'Desværre, du tabte';
-        popup.style.display = 'flex';
-    }
-}
+  guessLetter(str);
 
-
-//Notification
-function showNotification() {
-    notification.classList.add('show');
-
-    setTimeout(() =>{
-        notification.classList.remove('show');
-     }, 2000);
-}
-
-window.addEventListener('keydown', e => {
-    // console.log(e.keyCode);
-    if(e.keyCode >= 65 && e.keyCode <=90){
-        const letter = e.key;
-
-        if(selectedWord.includes(letter)) {
-            if(!correctLetters.includes(letter)){
-            correctLetters.push(letter);
-
-            displayWord();
-        } else {
-            showNotification();
-            } 
-        } else {
-            if(!wrongLetters.includes(letter)) {
-                wrongLetters.push(letter);
-
-                updateWrongLettersEl();
-        } else {
-            showNotification();
-        }
-        }
-    }
-});
-
-// Restart
-playAgainBtn.addEventListener('click', () => {
-    correctLetters.splice(0);
-    wrongLetters.splice(0);
-
-    selectedWord = words[Math.floor(Math.random() * words.length)];
-
-    displayWord();
-
-    updateWrongLettersEl();
-
-    popup.style.display = 'none';
-});
-displayWord();
+};
