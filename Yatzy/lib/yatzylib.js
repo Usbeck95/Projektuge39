@@ -8,6 +8,8 @@ const $ = function(foo) {
 let arr2 = [false, false, false, false, false];
 let arr1 = [];
 let res;
+let tries = 0;
+let rounds = 0;
 
 function roll() {
   return Math.floor(Math.random() * 6 + 1); 
@@ -114,8 +116,8 @@ function smallNumber() {
     }
     return score;
 }
-*/
-// Beregner fullhouse
+/*
+// Beregner fullhouse */
 const isCombo = (ar1) => {
     let countObj = {}
     for(let x of ar1){
@@ -139,6 +141,18 @@ const isCombo = (ar1) => {
     if(vals.filter(x => x === 2).length == 2) return true;
     return false;
   }
+
+
+const endRound = function() {
+let scoreboard = $('scoreBoard');
+let dice = document.getElementsByClassName("Dice");
+scoreboard.innerHTML = (arr1[0]+arr1[1]+arr1[2]+arr1[3]+arr1[4]);
+/*erEns();*/
+rounds+=1;
+tries=0;
+arr2 = [false, false, false, false, false];
+dice.style.border = 'thick solid #000000'; 
+}
 
 
 
