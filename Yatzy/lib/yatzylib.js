@@ -44,10 +44,10 @@ const dice1stay = function() {
     let dice1 = $('diceOne');
 
     if (arr2[0] === false) {
-    this.style.border = 'thick dotted #000000'; 
+    this.style.border = 'dotted #000000'; 
     arr2[0] = true; }
     else if(arr2[0] === true){
-    this.style.border = 'thick solid #000000'; 
+    this.style.border = 'solid #000000'; 
     arr2[0] = false;
     }
 
@@ -61,10 +61,10 @@ const dice2stay = function() {
     let dice2 = $('diceTwo');
 
     if (arr2[1] === false) {
-    this.style.border = 'thick dotted #000000'; 
+    this.style.border = 'dotted #000000'; 
     arr2[1] = true; }
     else if(arr2[1] === true){
-    this.style.border = 'thick solid #000000'; 
+    this.style.border = 'solid #000000'; 
     arr2[1] = false;
     }
 }
@@ -72,10 +72,10 @@ const dice2stay = function() {
 const dice3stay = function() {
     let dice3 = $('diceThree');
     if (arr2[2] === false) {
-    this.style.border = 'thick dotted #000000'; 
+    this.style.border = 'dotted #000000'; 
     arr2[2] = true; }
     else if(arr2[2] === true){
-    this.style.border = 'thick solid #000000'; 
+    this.style.border = 'solid #000000'; 
     arr2[2] = false;
     }
 }
@@ -83,10 +83,10 @@ const dice3stay = function() {
 const dice4stay = function() {
     let dice4 = $('diceFour');
     if (arr2[3] === false) {
-    this.style.border = 'thick dotted #000000'; 
+    this.style.border = 'dotted #000000'; 
     arr2[3] = true; }
     else if(arr2[3] === true){
-    this.style.border = 'thick solid #000000'; 
+    this.style.border = ' solid #000000'; 
     arr2[3] = false;
     }
 }
@@ -94,10 +94,10 @@ const dice4stay = function() {
 const dice5stay = function() {
     let dice5 = $('diceFive');
     if (arr2[4] === false) {
-    this.style.border = 'thick dotted #000000'; 
+    this.style.border = ' dotted #000000'; 
     arr2[4] = true; }
     else if(arr2[4] === true){
-    this.style.border = 'thick solid #000000'; 
+    this.style.border = ' solid #000000'; 
     arr2[4] = false;
     }
 }
