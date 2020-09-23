@@ -5,8 +5,9 @@
 
 const gameloop = function() {
 /* Funktionerne bliver kaldt vha EventListeners*/
-if (rounds < 3) {
-	if (tries < 3) {
+if (rounds < 15) {
+
+	if (tries < 20) {
 		realrollDice();
 
 		let dice1 =$('diceOne');
@@ -38,7 +39,7 @@ if (rounds < 3) {
 		}
 	else {
 		let writetoscore = $('writeToScore');
-		endRound();
+		writetoscore.addEventListener('click', endRound);
 		}
 
 }

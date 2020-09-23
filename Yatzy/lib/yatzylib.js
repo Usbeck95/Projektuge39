@@ -10,6 +10,8 @@ let arr1 = [];
 let res;
 let tries = 0;
 let rounds = 0;
+let dice = document.getElementsByClassName("Dice");
+
 
 function roll() {
   return Math.floor(Math.random() * 6 + 1); 
@@ -77,8 +79,8 @@ const dice5stay = function() {
 
 //Kontrollerer, om alle elementer er ens
 function erEns(arr1) {
-    if (array.every((val, i ,arr)=> val ==
-    arr1[0])){
+    if (arr1.every((val, i ,arr)=> val ==
+    arr1[i])){
         return true;
     } else {
         return false;
@@ -145,7 +147,6 @@ const isCombo = (ar1) => {
 
 const endRound = function() {
 let scoreboard = $('scoreBoard');
-let dice = document.getElementsByClassName("Dice");
 scoreboard.innerHTML = (arr1[0]+arr1[1]+arr1[2]+arr1[3]+arr1[4]);
 /*erEns();*/
 rounds+=1;
