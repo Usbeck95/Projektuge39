@@ -41,39 +41,65 @@ const rollDice = function () {
 
 
 const dice1stay = function() {
-    let dice1 = $('diceOne'); 
-    dice1.style.border = 'thick dotted #000000'; 
+    let dice1 = $('diceOne');
 
-    arr2[0] = true; /*Sætter elementerne per index i arr2 til true hvilket
+    if (arr2[0] === false) {
+    this.style.border = 'thick dotted #000000'; 
+    arr2[0] = true; }
+    else if(arr2[0] === true){
+    this.style.border = 'thick solid #000000'; 
+    arr2[0] = false;
+    }
+
+
+
+    /*Sætter elementerne per index i arr2 til true hvilket
                     tager dem ud af loopet i realrolldice()*/
 }
 
 const dice2stay = function() {
     let dice2 = $('diceTwo');
-    dice2.style.border = 'thick dotted #000000';
 
-    arr2[1] = true;
+    if (arr2[1] === false) {
+    this.style.border = 'thick dotted #000000'; 
+    arr2[1] = true; }
+    else if(arr2[1] === true){
+    this.style.border = 'thick solid #000000'; 
+    arr2[1] = false;
+    }
 }
 
 const dice3stay = function() {
     let dice3 = $('diceThree');
-    dice3.style.border = 'thick dotted #000000';
-
-    arr2[2] = true;
+    if (arr2[2] === false) {
+    this.style.border = 'thick dotted #000000'; 
+    arr2[2] = true; }
+    else if(arr2[2] === true){
+    this.style.border = 'thick solid #000000'; 
+    arr2[2] = false;
+    }
 }
 
 const dice4stay = function() {
     let dice4 = $('diceFour');
-    dice4.style.border = 'thick dotted #000000';
-
-    arr2[3] = true;
+    if (arr2[3] === false) {
+    this.style.border = 'thick dotted #000000'; 
+    arr2[3] = true; }
+    else if(arr2[3] === true){
+    this.style.border = 'thick solid #000000'; 
+    arr2[3] = false;
+    }
 }
 
 const dice5stay = function() {
     let dice5 = $('diceFive');
-    dice5.style.border = 'thick dotted #000000';
-
-    arr2[4] = true;
+    if (arr2[4] === false) {
+    this.style.border = 'thick dotted #000000'; 
+    arr2[4] = true; }
+    else if(arr2[4] === true){
+    this.style.border = 'thick solid #000000'; 
+    arr2[4] = false;
+    }
 }
 
 
@@ -143,6 +169,12 @@ const isCombo = (arr1) => {
     //console.log(vals);
     if(vals.filter(x => x === 2).length == 2) return true;
     return false;
+  }
+
+  const gotBonus = function(){
+    ones
+
+
   }
 
 
