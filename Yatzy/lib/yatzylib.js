@@ -7,11 +7,12 @@ const $ = function(foo) {
 
 let arr2 = [false, false, false, false, false];
 let arr1 = [];
+let scorea = [0, 0, 0, 0, 0, 0, 0];
+let scorecard = [];
 let res;
 let tries = 0;
 let rounds = 0;
-let dice = document.getElementsByClassName("Dice");
-let scorea = [0, 0, 0, 0, 0, 0, 0];
+
 
 
 
@@ -25,13 +26,16 @@ const realrollDice = function () {
     scorea = [0, 0, 0, 0, 0, 0, 0];
     for (var i = 0; i < 5; i++) { //Loop her
         outcome = roll(6);
-        if (!arr2[i]) {
+        if (!arr2[i]) {         /*! er en logisk operator der betyder "not" dvs "do stuff" 
+                                    når elementet i arr er sat til false*/
             arr1[i] = outcome;
-            scorea[outcome]++;  /*udfaldet af terninge kastene blive skrevet ind i vores score array*/
+            scorea[outcome]++;  /*udfaldet af terninge kastene blive skrevet ind i vores score array 
+                                    på den plads som er givet af outcome*/
         } else {
-            scorea[arr1[i]]++; /*index af arr1 bruges som index i scorea*/
+            scorea[arr1[i]]++; /*index af arr1 bruges som index i scorea dette skriver 
+                                    score ind i score array når de er låst*/
         }
-        scorea[0] += arr1[i]; 
+        scorea[0] += arr1[i];  /*tæller de samlede point sammen på plads 0 i score array*/
     }
 
     console.log(scorea);
@@ -47,18 +51,16 @@ const rollDice = function () {
 const dice1stay = function() {
     let dice1 = $('diceOne');
 
-    if (arr2[0] === false) {
+    if (arr2[0] === false) {            /*Denne if/else konstruktion fungere basically som en toggle af og til, 
+                                            hvor arr2 er afgørende for hvad der skal ske*/
     this.style.border = 'dotted #000000'; 
     arr2[0] = true; }
-    else if(arr2[0] === true){
+    else if(arr2[0] === true){          /*Sætter elementerne per index i arr2 til true hvilket
+                                            tager dem ud af loopet i realrolldice()*/
     this.style.border = 'solid #000000'; 
     arr2[0] = false;
     }
 
-
-
-    /*Sætter elementerne per index i arr2 til true hvilket
-                    tager dem ud af loopet i realrolldice()*/
 }
 
 const dice2stay = function() {
@@ -108,6 +110,95 @@ const dice5stay = function() {
 
 
 
+
+  const gotBonus = function(){
+
+    if (rounds = 15, isOnes(), isTwos(), isThrees(), isFours(), isFives(), isSixes()) {
+        scorecard[0] =+ 50;
+    }
+
+  }
+
+const isOnes = function() {
+endRound();                         /*endRound() bliver kørt når der trykkes på score knapperne */
+scorecard[1] = scorea[1] * 1;           /* scoren fra score array blive indført på scorecard array. 
+                                    Der bliver ganget med hvormange forkomster af 1 der er i array*/
+$('Ones').innerHTML = (scorecard[1]);
+$('btnOnes').style.visibility = "hidden"; /*score knappen skjules når scoren er indført,
+                                    jeg ville nok gøre knappen genenmsigtig og inaktiv en anden gan mht UX*/
+return true;
+
+}
+
+const isTwos = function() {
+endRound();
+scorecard[2] = scorea[2] * 2;
+$('Twos').innerHTML = (scorecard[2]);
+$('btnTwos').style.visibility = "hidden";
+return true;
+
+}
+const isThrees = function() {
+endRound();
+scorecard[3] = scorea[3] * 3;
+$('Threes').innerHTML = (scorecard[3]);
+$('btnThrees').style.visibility = "hidden";
+return true;
+
+}
+const isFours = function() {
+    endRound();
+scorecard[4] = scorea[4] * 4;
+$('Fours').innerHTML = (scorecard[4]);
+$('btnFours').style.visibility = "hidden";
+return true;
+
+}
+const isFives = function() {
+    endRound();
+scorecard[5] = scorea[5] * 5;
+$('Fives').innerHTML = (scorecard[5]);
+$('btnFives').style.visibility = "hidden";
+return true;
+
+}
+const isSixes = function() {
+    endRound();
+scorecard[6] = scorea[6] * 6;
+$('Sixes').innerHTML = (scorecard[6]);
+$('btnSixes').style.visibility = "hidden";
+return true;
+
+}
+
+
+const endRound = function() {
+let scoreboard = $('scoreBoard');
+rounds+=1; 
+tries=0;    /* rounds og tries henviser til variablerne i gameloop funktionen i 
+                executable.js som holder styr på hvormange forsøg og runder der er brugt*/
+arr2 = [false, false, false, false, false];
+            /*arr2 er det array i roll*/
+$('diceOne').style.border = ' solid #000000';
+$('diceTwo').style.border = ' solid #000000';
+$('diceThree').style.border = ' solid #000000';
+$('diceFour').style.border = ' solid #000000';
+$('diceFive').style.border = ' solid #000000';
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/**
 //Kontrollerer, om alle elementer er ens
 function erEns(arr1) {
     if (arr1.every((val, i ,arr)=> val ==
@@ -149,8 +240,8 @@ function smallNumber() {
     }
     return score;
 }
-/*
-// Beregner fullhouse */
+
+ Beregner fullhouse 
 const isCombo = (arr1) => {
     let countObj = {}
     for(let x of arr1){
@@ -174,59 +265,4 @@ const isCombo = (arr1) => {
     if(vals.filter(x => x === 2).length == 2) return true;
     return false;
   }
-
-  const gotBonus = function(){
-
-    if (rounds = 15, ones(), twos(), threes(), fours(), fives(), sixes()) {
-        score + 50;
-    }
-
-  }
-
-const isOnes = function() {
-
-if (arr1[0]=1) {
-    score + 1;
-}
-else if (arr1[1]=1) {
-    score + 1;
-}
-else if (arr1[2]=1) {
-    score + 1;
-}
-else if (arr1[3]=1) {
-    score + 1;
-}
-else if (arr1[4]=1) {
-    score + 1;
-}
-else if (arr1[5]=1) {
-    score + 1;
-}
-
-endRound();
-
-}
-const isTwos = function() {
-}
-const isThrees = function() {
-}
-const isFours = function() {
-}
-const isFives = function() {
-}
-const isSixes = function() {
-}
-
-
-const endRound = function() {
-let scoreboard = $('scoreBoard');
-rounds+=1;
-tries=0;
-arr2 = [false, false, false, false, false];
-}
-
-
-
-
-
+*/
