@@ -7,10 +7,7 @@
 </head>
 <body>
     <h1>Hangman</h1>
-    <p style="text-align:center";>Spillet går ud på at gætte et ord eller en sætning, 
-        hvor kun antallet af bogstaver er kendt, lidt i stil med Lykkehjulet.
-         Der gættes på skift et bogstav ad gangen, og korrekte bogstaver bliver 
-         placeret på de respektive pladser i ordet eller sætningen.</p>
+    <p class="text"></p>
    <div>
         <svg height="250" width="200" class="figure-container">
             <!--Stang-->
@@ -30,55 +27,12 @@
             <line x1="140" y1="150" x2="160" y2="180"/>
         </svg>
     </div>
-<script>
-var words = [
-    'html',
-    'css',
-    'javascript',
-]; //de orde, der skal gættes
-var word = words[Math.floor(Math.random() * words.length) ]; //tilfældigt
-
-var answerArray = []; //brugersvar
-
-var lifes = 6; //forsøg
-
-//tjekker om bogstavet er rigtig
-for (var i = 0; i < word.length; i++){
-    answerArray[i] = '_'
-}
-var remaingLetters = word.length;
-
-while (remaingLetters > 0 && lifes > 0 ){
-    alert(answerArray.join(' '));
-
-<<<<<<< HEAD
-=======
-    <button onclick="clicked()">Guess</button>
->>>>>>> e0e2b2cd4efd4452c63c01706e1631235142f08d
-
- var guess = prompt('Guess the letter! Click "Cancel" to exit. You '+ lifes + ' attempts').toLowerCase();
-//indtast kun små bogstaver 
-//spil loop
-if (guess === null) {
-    break;
-} else if (guess.length !== 1) {
-    alert('Et bogstav pr gang');
-} else {
-    for (var j = 0; j < word.length; j++){
-        if (word[j] === guess){
-            answerArray[j] = guess;
-            remaingLetters--;
-            }
-        }lifes--
-    }
-}
-//display the result after the end of the game cycle
-alert(answerArray.join(' '));
-if(lifes > 0){
-    alert('Congratulations! This word - ' + word);
-} else {
-    alert('You lost! This word ' + word);
-}
-</script>
+    <div>
+            <p class="text">The game is about guessing a word or phrase,
+             where only the number of letters is known, <br>a bit in the style of the Wheel of Fortune.
+             One letter at a time is guessed, and the correct letters remain
+             <br>placed in the respective places of the word or sentence</p>
+    </div>
+<script src="hangman.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #21286b;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
     color: white;
     font-family: Arial;
     display: flex;
@@ -15,11 +15,15 @@ body {
 
 h1 {
     margin: 20px 0 0;
+    font-size: 30px;
 }
 
-p {
+.text{
     color: white;
-    font-size: 15px;
+    font-size: 25px;
+    padding: 70px 0; 
+    text-align: center; 
+    margin: auto;
 }
 
 .figure-container {
