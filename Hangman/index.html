@@ -2,21 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
-    <script src="hangman.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <h1>Hangman</h1>
-
-    <div id="mydiv"><h2 id="guessedWord">_ _ _ _ _</h2></div>
-
-    <input class="str" type="text" placeholder="Enter a character to guess" id="str" />
-
-    <button onclick="clicked()">Guess</button>
-
-    <h3 id="message">Keep Playing</h3>
-  </body>
+    <p class="text"></p>
+   <div>
+        <svg height="250" width="200" class="figure-container">
+            <!--Stang-->
+            <line x1="60" y1="20" x2="140" y2="20"/>
+            <line x1="140" y1="20" x2="140" y2="50"/>
+            <line x1="60" y1="20" x2="60" y2="230"/>
+            <line x1="20" y1="230" x2="100" y2="230"/>
+            <!--Hoved-->
+            <circle cx="140" cy="70" r="20"/>
+            <!--Krop-->
+            <line x1="140" y1="90" x2="140" y2="150"/>
+            <!--Ærmer-->
+            <line x1="140" y1="120" x2="120" y2="100"/>
+            <line x1="140" y1="120" x2="160" y2="100"/>
+            <!--Fødder-->
+            <line x1="140" y1="150" x2="120" y2="180"/>
+            <line x1="140" y1="150" x2="160" y2="180"/>
+        </svg>
+    </div>
+    <div>
+            <p class="text">The game is about guessing a word or phrase,
+             where only the number of letters is known, <br>a bit in the style of the Wheel of Fortune.
+             One letter at a time is guessed, and the correct letters remain
+             <br>placed in the respective places of the word or sentence</p>
+    </div>
+<script src="hangman.js"></script>
+</body>
 </html>

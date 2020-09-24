@@ -1,61 +1,45 @@
 "use strict";
-// ordte der skal gettes
-var word = ["a", "e", "r", "o", "p", "l", "a", "n", "e"];
 
-var guess = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
+var words = [
+    'html',
+    'css',
+    'javascript',
+]; //de orde, der skal gættes
+var word = words[Math.floor(Math.random() * words.length) ]; //tilfældigt
 
-const guessLetter = str => {
+var answerArray = []; //brugersvar
 
-  let flag = 0;
+var lifes = 6; //forsøg
 
-  // traversing the whole word array to check if guessed char is equal to it or not
+//tjekker om bogstavet er rigtig
+for (var i = 0; i < word.length; i++){
+    answerArray[i] = '_'
+}
+var remaingLetters = word.length;
 
-  for (var i = 0; i < word.length; i++) {
+while (remaingLetters > 0 && lifes > 0 ){
+    alert(answerArray.join(' '));
 
-    if (word[i] === str) {
-
-      flag = 1;
-
-      guess[i] = str;
-
+ var guess = prompt('Guess the letter! Click "Cancel" to exit. You '+ lifes + ' attempts').toLowerCase();
+//indtast kun små bogstaver 
+//spil loop
+if (guess === null) {
+    break;
+} else if (guess.length !== 1) {
+    alert('Et bogstav pr gang');
+} else {
+    for (var j = 0; j < word.length; j++){
+        if (word[j] === guess){
+            answerArray[j] = guess;
+            remaingLetters--;
+            }
+        }lifes--
     }
-
-  }
-
-  console.log(guess.join(" "));
-
-  // if the guess letter was correct
-
-  if (flag == 1) {
-
-    document.getElementById("guessedWord").innerHTML = guess.join(" ");
-
-    document.getElementById("str").value = "";
-
-    document.getElementById("message").innerHTML =
-
-      "Congratulation you guessed the right letter";
-
-    // console.log("Congratulation you guessed the right letter");
-
-  }
-
-  // if all the letters are guessed
-
-  if (!guess.includes("_")) {
-
-    document.getElementById("message").innerHTML =
-
-      "Congratulation you won the game";
-
-    // console.log("Congratulation you won the game");
-  }
-};
-
-const clicked = () => {
-
-  const str = document.getElementById("str").value;
-
-  guessLetter(str);
-
-};
+}
+//display the result after the end of the game cycle
+alert(answerArray.join(' '));
+if(lifes > 0){
+    alert('Congratulations! This word - ' + word);
+} else {
+    alert('You lost! This word ' + word);
+}
