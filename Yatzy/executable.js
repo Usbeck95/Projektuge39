@@ -35,7 +35,17 @@ if (rounds < 15) {
 		tries +=1;
 		let rollsleft =$('rollsLeft');
 		rollsleft.innerHTML = (tries);
+        
+         //Beregner upper scores.
+            var upResults = [arr1[0] + arr1[1]+ arr1[2] + arr1[3] + arr1[4]];
+            var upSum = 0;
+        
+            for(var i = 0; i < upResults.length; i++){ //Loop for at gennemgå de rullede terningers sum.
+            upSum += upResults[i]
+            }
+            console.log('Your sum is ' + upSum); //Skriver upper scores i console.
 
+        
 		}
 	else {
 		let writetoscore = $('writeToScore');
