@@ -42,9 +42,11 @@ if (rounds < 15) {
 		writetoscore.addEventListener('click', endRound);
 		}
 
+
 }
 else {
 	console.log('gameover')
+	gotBonus();
 }
 }
 

@@ -11,6 +11,8 @@ let res;
 let tries = 0;
 let rounds = 0;
 let dice = document.getElementsByClassName("Dice");
+let score=0;
+
 
 
 function roll() {
@@ -172,10 +174,14 @@ const isCombo = (arr1) => {
   }
 
   const gotBonus = function(){
-    ones
 
+    if (rounds = 15, ones(), twos(), threes(), fours(), fives(), sixes()) {
+        score + 50;
+    }
 
   }
+
+
 
 
 const endRound = function() {
