@@ -24,20 +24,17 @@ const realrollDice = function () {
     let outcome;
     scorea = [0, 0, 0, 0, 0, 0, 0];
     for (var i = 0; i < 5; i++) { //Loop her
-
+        outcome = roll(6);
         if (!arr2[i]) {
-            outcome = roll(6);
-            console.log(outcome);
             arr1[i] = outcome;
-            scorea[outcome]++;
-
+            scorea[outcome]++;  /*udfaldet af terninge kastene blive skrevet ind i vores score array*/
+        } else {
+            scorea[arr1[i]]++; /*index af arr1 bruges som index i scorea*/
         }
-
-        
-
+        scorea[0] += arr1[i]; 
     }
 
-
+    console.log(scorea);
 }
 
 const rollDice = function () {

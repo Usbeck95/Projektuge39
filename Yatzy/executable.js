@@ -43,13 +43,12 @@ if (rounds < 15) {
             for(var i = 0; i < upResults.length; i++){ //Loop for at gennemgå de rullede terningers sum.
             upSum += upResults[i]
             }
-            console.log('Your sum is ' + upSum); //Skriver upper scores i console.
-
+            console.log('Your sum is ' + scorea[0]); //Skriver upper scores i console.
+            $('sumOfUpScore').innerHTML = scorea[0];
         
 		}
 	else {
-		let writetoscore = $('writeToScore');
-		writetoscore.addEventListener('click', endRound);
+
 		}
 
 
