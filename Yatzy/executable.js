@@ -65,6 +65,7 @@ $('btnThrees').addEventListener('click', isThrees);
 $('btnFours').addEventListener('click', isFours);
 $('btnFives').addEventListener('click', isFives);
 $('btnSixes').addEventListener('click', isSixes);
+$('btnAPair').addEventListener('click', isPair);
 
 $('restartBtn').addEventListener('click', restartGame);
 

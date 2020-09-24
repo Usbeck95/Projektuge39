@@ -27,7 +27,7 @@ const realrollDice = function () {
     for (var i = 0; i < 5; i++) { //Loop her
         outcome = roll(6);
         if (!arr2[i]) {         /*! er en logisk operator der betyder "not" dvs "do stuff" 
-                                    når elementet i arr er sat til false*/
+                                    når elementet i arr2 er sat til false*/
             arr1[i] = outcome;
             scorea[outcome]++;  /*udfaldet af terninge kastene blive skrevet ind i vores score array 
                                     på den plads som er givet af outcome*/
@@ -52,7 +52,7 @@ const dice1stay = function() {
     let dice1 = $('diceOne');
 
     if (arr2[0] === false) {            /*Denne if/else konstruktion fungere basically som en toggle af og til, 
-                                            hvor arr2 er afgørende for hvad der skal ske*/
+                                            hvor arr2 true eller false er afgørende for hvad der skal ske*/
     this.style.border = 'dotted #000000'; 
     arr2[0] = true; }
     else if(arr2[0] === true){          /*Sætter elementerne per index i arr2 til true hvilket
@@ -167,6 +167,16 @@ const isSixes = function() {
 scorecard[6] = scorea[6] * 6;
 $('Sixes').innerHTML = (scorecard[6]);
 $('btnSixes').style.visibility = "hidden";
+return true;
+
+}
+
+const isPair = function() {
+    endRound();
+scorecard[7] = (scorea[i] >= 2)*i;
+
+$('APair').innerHTML = (scorecard[6]);
+$('btnAPair').style.visibility = "hidden";
 return true;
 
 }
