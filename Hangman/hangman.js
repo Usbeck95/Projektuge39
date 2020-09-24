@@ -12,6 +12,10 @@ var answerArray = []; //brugersvar
 
 var lifes = 6; //forsøg
 
+var username
+
+username = prompt("Enter your name");
+
 //tjekker om bogstavet er rigtig
 for (var i = 0; i < word.length; i++){
     answerArray[i] = '_'
@@ -45,3 +49,4 @@ if(lifes > 0){
 } else {
     alert('You lost! This word - ' + word);
 }
+createCookies(username, counter, 10000000);
