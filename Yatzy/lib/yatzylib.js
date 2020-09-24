@@ -181,6 +181,30 @@ const isCombo = (arr1) => {
 
   }
 
+const isOnes = function() {
+
+if (arr1[0]=1) {
+    score + 1;
+}
+else if (arr1[1]=1) {
+    score + 1;
+}
+else if (arr1[2]=1) {
+    score + 1;
+}
+else if (arr1[3]=1) {
+    score + 1;
+}
+else if (arr1[4]=1) {
+    score + 1;
+}
+else if (arr1[5]=1) {
+    score + 1;
+}
+endRound();
+
+}
+
 
 
 
@@ -189,8 +213,6 @@ let scoreboard = $('scoreBoard');
 rounds+=1;
 tries=0;
 arr2 = [false, false, false, false, false];
-dice1.style.border = 'thick solid #000000'; 
-
 }
 
 
