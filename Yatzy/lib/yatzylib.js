@@ -22,14 +22,19 @@ function roll() {
 
 const realrollDice = function () {
     let outcome;
-    let result = [0, 0, 0, 0, 0, 0, 0];
+    scorea = [0, 0, 0, 0, 0, 0, 0];
     for (var i = 0; i < 5; i++) { //Loop her
+
         if (!arr2[i]) {
             outcome = roll(6);
             console.log(outcome);
             arr1[i] = outcome;
+            scorea[outcome]++;
+
         }
-        scorea[outcome]++;
+
+        
+
     }
 
 
