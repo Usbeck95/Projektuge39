@@ -4,6 +4,7 @@ var words = [
     'html',
     'css',
     'javascript',
+    'niels'
 ]; //de orde, der skal gættes
 var word = words[Math.floor(Math.random() * words.length) ]; //tilfældigt
 
@@ -36,10 +37,11 @@ if (guess === null) {
         }lifes--
     }
 }
+
 //display the result after the end of the game cycle
 alert(answerArray.join(' '));
 if(lifes > 0){
     alert('Congratulations! This word - ' + word);
 } else {
-    alert('You lost! This word ' + word);
+    alert('You lost! This word - ' + word);
 }
