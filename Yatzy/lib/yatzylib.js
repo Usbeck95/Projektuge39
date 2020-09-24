@@ -11,6 +11,8 @@ let res;
 let tries = 0;
 let rounds = 0;
 let dice = document.getElementsByClassName("Dice");
+let scorea = [0, 0, 0, 0, 0, 0, 0];
+
 
 
 function roll() {
@@ -20,17 +22,17 @@ function roll() {
 
 const realrollDice = function () {
     let outcome;
-    var result = [0, 0, 0, 0, 0, 0, 0];
+    let result = [0, 0, 0, 0, 0, 0, 0];
     for (var i = 0; i < 5; i++) { //Loop her
         if (!arr2[i]) {
             outcome = roll(6);
             console.log(outcome);
             arr1[i] = outcome;
         }
-        result[outcome]++;
+        scorea[outcome]++;
     }
 
-    return result;
+
 }
 
 const rollDice = function () {
@@ -172,10 +174,47 @@ const isCombo = (arr1) => {
   }
 
   const gotBonus = function(){
-    ones
 
+    if (rounds = 15, ones(), twos(), threes(), fours(), fives(), sixes()) {
+        score + 50;
+    }
 
   }
+
+const isOnes = function() {
+
+if (arr1[0]=1) {
+    score + 1;
+}
+else if (arr1[1]=1) {
+    score + 1;
+}
+else if (arr1[2]=1) {
+    score + 1;
+}
+else if (arr1[3]=1) {
+    score + 1;
+}
+else if (arr1[4]=1) {
+    score + 1;
+}
+else if (arr1[5]=1) {
+    score + 1;
+}
+
+endRound();
+
+}
+const isTwos = function() {
+}
+const isThrees = function() {
+}
+const isFours = function() {
+}
+const isFives = function() {
+}
+const isSixes = function() {
+}
 
 
 const endRound = function() {
@@ -183,8 +222,6 @@ let scoreboard = $('scoreBoard');
 rounds+=1;
 tries=0;
 arr2 = [false, false, false, false, false];
-dice1.style.border = 'thick solid #000000'; 
-
 }
 
 

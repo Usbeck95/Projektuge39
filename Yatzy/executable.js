@@ -52,9 +52,11 @@ if (rounds < 15) {
 		writetoscore.addEventListener('click', endRound);
 		}
 
+
 }
 else {
 	console.log('gameover')
+	gotBonus();
 }
 }
 
@@ -64,11 +66,17 @@ const restartGame = function () {
     location.reload();
 }
 
-
+$('scoreOnes').addEventListener('click', isOnes);
+$('scoreTwos').addEventListener('click', isTwos);
+$('scoreThrees').addEventListener('click', isThrees);
+$('scoreFours').addEventListener('click', isFours);
+$('scoreFives').addEventListener('click', isFives);
+$('scoreSixes').addEventListener('click', isSixes);
 
 $('restartBtn').addEventListener('click', restartGame);
 
 $('rollBtn').addEventListener('click', gameloop);
+
 
 
 
