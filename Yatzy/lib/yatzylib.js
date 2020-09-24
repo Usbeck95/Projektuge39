@@ -11,7 +11,7 @@ let res;
 let tries = 0;
 let rounds = 0;
 let dice = document.getElementsByClassName("Dice");
-let score=0;
+let scorea = [0, 0, 0, 0, 0, 0, 0];
 
 
 
@@ -22,17 +22,17 @@ function roll() {
 
 const realrollDice = function () {
     let outcome;
-    var result = [0, 0, 0, 0, 0, 0, 0];
+    let result = [0, 0, 0, 0, 0, 0, 0];
     for (var i = 0; i < 5; i++) { //Loop her
         if (!arr2[i]) {
             outcome = roll(6);
             console.log(outcome);
             arr1[i] = outcome;
         }
-        result[outcome]++;
+        scorea[outcome]++;
     }
 
-    return result;
+
 }
 
 const rollDice = function () {
@@ -201,11 +201,20 @@ else if (arr1[4]=1) {
 else if (arr1[5]=1) {
     score + 1;
 }
+
 endRound();
 
 }
-
-
+const isTwos = function() {
+}
+const isThrees = function() {
+}
+const isFours = function() {
+}
+const isFives = function() {
+}
+const isSixes = function() {
+}
 
 
 const endRound = function() {
