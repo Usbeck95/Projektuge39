@@ -71,6 +71,7 @@ $('btnFours').addEventListener('click', isFours);
 $('btnFives').addEventListener('click', isFives);
 $('btnSixes').addEventListener('click', isSixes);
 $('btnAPair').addEventListener('click', scorePair);
+$('btnLow').addEventListener('click', isLow);
 
 $('restartBtn').addEventListener('click', restartGame);
 

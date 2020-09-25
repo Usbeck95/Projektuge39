@@ -190,6 +190,15 @@ const isPair =function() {
 
 }
 
+const isLow = function() {
+    endRound();
+    if (scorea === scorea[15, 1, 1, 1, 1, 1, 0]); {
+      $('Low').innerHTML = (15);
+      $('btnLow').style.visibility = "hidden";
+      return true;
+    }
+}
+
 
 const endRound = function() {
 let scoreboard = $('scoreBoard');
