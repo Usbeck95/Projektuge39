@@ -12,7 +12,7 @@ let scorecard = [];
 let res;
 let tries = 0;
 let rounds = 0;
-
+let pairscore = 0;
 
 
 
@@ -35,8 +35,14 @@ const realrollDice = function () {
             scorea[arr1[i]]++; /*index af arr1 bruges som index i scorea dette skriver 
                                     score ind i score array når de er låst*/
         }
+        
         scorea[0] += arr1[i];  /*tæller de samlede point sammen på plads 0 i score array*/
+        if (scorea[i] >= 2) {
+            pairscore = scorea[i]*arr1[i];
+            }
+
     }
+
 
     console.log(scorea);
 }
@@ -170,14 +176,17 @@ $('btnSixes').style.visibility = "hidden";
 return true;
 
 }
+const scorePair = function () {
 
-const isPair = function() {
-    endRound();
-scorecard[7] = (scorea[i] >= 2)*i;
-
-$('APair').innerHTML = (scorecard[6]);
+endRound();
+scorecard[7] = isPair(); 
+$('APair').innerHTML = (scorecard[7]);
 $('btnAPair').style.visibility = "hidden";
-return true;
+
+}
+const isPair =function() {
+
+
 
 }
 

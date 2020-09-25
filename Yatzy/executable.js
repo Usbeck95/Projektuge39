@@ -9,6 +9,7 @@ const gameloop = function() {
 
 		if (tries < 5) {
 			realrollDice();
+			
 
 			let dice1 =$('diceOne');
 			let dice2 =$('diceTwo');
@@ -35,6 +36,8 @@ const gameloop = function() {
 			tries +=1;
 			let rollsleft =$('rollsLeft');
 			rollsleft.innerHTML = (tries);
+
+
 	        
 	         //Beregner upper scores.
 	            var upResults = [arr1[0] + arr1[1]+ arr1[2] + arr1[3] + arr1[4]];
@@ -65,7 +68,7 @@ $('btnThrees').addEventListener('click', isThrees);
 $('btnFours').addEventListener('click', isFours);
 $('btnFives').addEventListener('click', isFives);
 $('btnSixes').addEventListener('click', isSixes);
-$('btnAPair').addEventListener('click', isPair);
+$('btnAPair').addEventListener('click', scorePair);
 
 $('restartBtn').addEventListener('click', restartGame);
 
