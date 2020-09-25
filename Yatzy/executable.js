@@ -54,6 +54,8 @@ const gameloop = function() {
 	else {
 	console.log('gameover')
 	gotBonus();
+	createCookie(scorecard);
+
 	}
 }
 
